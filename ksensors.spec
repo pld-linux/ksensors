@@ -13,6 +13,7 @@ Requires:	lm_sensors
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
+%define _prefix /usr/X11R6
 
 %description
 KSensors is a nice frontend for lm-sensors, a set of tools for
@@ -44,11 +45,11 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}/{hicolor,locolor}/{16x16,32x32}/apps \
-	   $RPM_BUILD_ROOT%{_applnkdir}/Applications
+#install -d $RPM_BUILD_ROOT%{_pixmapsdir}/{hicolor,locolor}/{16x16,32x32}/apps\
+#	   $RPM_BUILD_ROOT%{_applnkdir}/Applications
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/icons $RPM_BUILD_ROOT%{_pixmapsdir}
-install ksensors/ksensors.desktop $RPM_BUILD_ROOT%{_applnkdir}/Applications
+#mv -f $RPM_BUILD_ROOT%{_datadir}/icons $RPM_BUILD_ROOT%{_pixmapsdir}
+#install ksensors/ksensors.desktop $RPM_BUILD_ROOT%{_applnkdir}/Applications
 
 %find_lang %{name} --with-kde
 
