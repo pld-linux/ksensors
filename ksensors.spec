@@ -5,7 +5,7 @@ Version:	0.7.3
 Release:	1
 Group:		X11/Applications
 License:	GPL
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/ksensors/%{name}-%{version}.tar.gz
 # Source0-md5:	4f6c5d7dea5e637e772d17f1e547d6f1
 URL:		http://ksensors.sourceforge.net/
 BuildRequires:	lm_sensors-devel
