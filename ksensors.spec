@@ -8,13 +8,12 @@ License:	GPL
 Source0:	http://dl.sourceforge.net/ksensors/%{name}-%{version}.tar.gz
 # Source0-md5:	4f6c5d7dea5e637e772d17f1e547d6f1
 URL:		http://ksensors.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	lm_sensors-devel
-BuildRequires:	qt-devel >= 3.0
 BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	qt-devel >= 3.0
 Requires:	lm_sensors
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 KSensors is a nice frontend for lm-sensors, a set of tools for
@@ -32,8 +31,10 @@ wspó³pracuj±cego ze sprzêtem takim jak LM78 czy LM75) oraz HDDtemp
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.* admin
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
-%configure2_13
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
@@ -41,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
         DESTDIR=$RPM_BUILD_ROOT \
-        desktopdir=%{_desktopdir}
+        shelldesktopdir=%{_desktopdir}
 
 %find_lang %{name} --with-kde
 
@@ -58,5 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/ksensors/pics/*
 %dir %{_datadir}/apps/sounds
 %{_datadir}/apps/sounds/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_iconsdir}/*/*/apps/*
