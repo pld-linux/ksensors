@@ -6,6 +6,7 @@ Release:	1
 Group:		X11/Applications
 License:	GPL
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	e54e706ea240a162377a17b85715ad62
 URL:		http://ksensors.sourceforge.net/
 BuildRequires:	lm_sensors-devel
 BuildRequires:	qt-devel >= 3.0
