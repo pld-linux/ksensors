@@ -1,7 +1,7 @@
 Summary:	KSensors - lmsensors frontend
 Summary(pl):	KSensors - frontend dla lmsensors
 Name:		ksensors
-Version:	0.7.2
+Version:	0.7.3
 Release:	1
 Group:		X11/Applications
 License:	GPL
@@ -29,7 +29,6 @@ wspó³pracuj±cego ze sprzêtem takim jak LM78 czy LM75) oraz HDDtemp
 
 %prep
 %setup -q
-rm config.cache
 
 %build
 kde_appsdir="%{_applnkdir}"; export kde_appsdir
@@ -43,13 +42,8 @@ kde_icondir="%{_pixmapsdir}"; export kde_icondir
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}/{hicolor,locolor}/{16x16,32x32}/apps \
-	   $RPM_BUILD_ROOT%{_applnkdir}/Applications
-
-mv -f $RPM_BUILD_ROOT%{_datadir}/icons $RPM_BUILD_ROOT%{_pixmapsdir}
-install ksensors/ksensors.desktop $RPM_BUILD_ROOT%{_applnkdir}/Applications
+        DESTDIR=$RPM_BUILD_ROOT \
+        desktopdir=%{_desktopdir}
 
 %find_lang %{name} --with-kde
 
@@ -60,9 +54,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc FAQ README TODO
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Applications/*
+%{_applnkdir}/Utilities/*
 %dir %{_datadir}/apps/ksensors
 %dir %{_datadir}/apps/ksensors/pics
+%dir %{_datadir}/apps/sounds
+%{_datadir}/apps/ksensors/ksensorsui.rc
 %{_datadir}/apps/ksensors/pics/*
+%{_datadir}/apps/sounds/*
+
 %{_pixmapsdir}/*/*/apps/*
-%{_datadir}/autostart/*
