@@ -23,7 +23,7 @@ HDDtemp, a tool for monitoring hard drive temperatures.
 
 %description -l pl
 KSensors jest przyjemnym interfejsem graficznym dla pakietu
-lm-sensors (czyli zestawu narzedzi do monitorowania sprzetu
+lm-sensors (czyli zestawu narzêdzi do monitorowania sprzêtu
 wspó³pracuj±cego ze sprzêtem takim jak LM78 czy LM75) oraz HDDtemp
 (narzêdziem do monitorowania temperatury dysku twardego).
 
