@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 URL:		http://ksensors.sourceforge.net/
 BuildRequires:	lm_sensors-devel
 BuildRequires:	qt-devel >= 3.0
+BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	lm_sensors
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,10 +32,7 @@ wspó³pracuj±cego ze sprzêtem takim jak LM78 czy LM75) oraz HDDtemp
 %setup -q
 
 %build
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
-
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 %configure2_13
 %{__make}
 
@@ -54,12 +52,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc FAQ README TODO
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Utilities/*
 %dir %{_datadir}/apps/ksensors
-%dir %{_datadir}/apps/ksensors/pics
-%dir %{_datadir}/apps/sounds
 %{_datadir}/apps/ksensors/ksensorsui.rc
+%dir %{_datadir}/apps/ksensors/pics
 %{_datadir}/apps/ksensors/pics/*
+%dir %{_datadir}/apps/sounds
 %{_datadir}/apps/sounds/*
-
-%{_pixmapsdir}/*/*/apps/*
+%{_desktopdir}/*
+%{_iconsdir}/*/*/apps/*
