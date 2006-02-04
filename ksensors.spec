@@ -3,15 +3,16 @@ Summary(pl):	KSensors - frontend dla lmsensors
 Name:		ksensors
 Version:	0.7.3
 Release:	1
-Group:		X11/Applications
 License:	GPL
+Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/ksensors/%{name}-%{version}.tar.gz
 # Source0-md5:	4f6c5d7dea5e637e772d17f1e547d6f1
 URL:		http://ksensors.sourceforge.net/
 BuildRequires:	automake
+BuildRequires:	kdelibs-devel
 BuildRequires:	lm_sensors-devel
-BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	qt-devel >= 3.0
+BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	lm_sensors
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,10 +23,10 @@ hardware health monitoring hardware such as the LM78 or LM75, and
 HDDtemp, a tool for monitoring hard drive temperatures.
 
 %description -l pl
-KSensors jest przyjemnym interfejsem graficznym dla pakietu
-lm-sensors (czyli zestawu narzêdzi do monitorowania sprzêtu
-wspó³pracuj±cego ze sprzêtem takim jak LM78 czy LM75) oraz HDDtemp
-(narzêdziem do monitorowania temperatury dysku twardego).
+KSensors jest przyjemnym interfejsem graficznym dla pakietu lm-sensors
+(czyli zestawu narzêdzi do monitorowania sprzêtu wspó³pracuj±cego ze
+sprzêtem takim jak LM78 czy LM75) oraz HDDtemp (narzêdziem do
+monitorowania temperatury dysku twardego).
 
 %prep
 %setup -q
