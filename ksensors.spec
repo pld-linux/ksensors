@@ -1,5 +1,5 @@
 Summary:	KSensors - lmsensors frontend
-Summary(pl):	KSensors - frontend dla lmsensors
+Summary(pl.UTF-8):   KSensors - frontend dla lmsensors
 Name:		ksensors
 Version:	0.7.3
 Release:	1
@@ -22,10 +22,10 @@ monitoring the hardware health of Linux systems equipped with certain
 hardware health monitoring hardware such as the LM78 or LM75, and
 HDDtemp, a tool for monitoring hard drive temperatures.
 
-%description -l pl
+%description -l pl.UTF-8
 KSensors jest przyjemnym interfejsem graficznym dla pakietu lm-sensors
-(czyli zestawu narzêdzi do monitorowania sprzêtu wspó³pracuj±cego ze
-sprzêtem takim jak LM78 czy LM75) oraz HDDtemp (narzêdziem do
+(czyli zestawu narzÄ™dzi do monitorowania sprzÄ™tu wspÃ³Å‚pracujÄ…cego ze
+sprzÄ™tem takim jak LM78 czy LM75) oraz HDDtemp (narzÄ™dziem do
 monitorowania temperatury dysku twardego).
 
 %prep
