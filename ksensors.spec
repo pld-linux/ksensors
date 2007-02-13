@@ -1,5 +1,5 @@
 Summary:	KSensors - lmsensors frontend
-Summary(pl.UTF-8):   KSensors - frontend dla lmsensors
+Summary(pl.UTF-8):	KSensors - frontend dla lmsensors
 Name:		ksensors
 Version:	0.7.3
 Release:	1
