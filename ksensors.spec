@@ -11,7 +11,7 @@ URL:		http://ksensors.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel
 BuildRequires:	lm_sensors-devel
-BuildRequires:	qt-devel >= 3.0
+BuildRequires:	qt-devel >= 6:3.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	lm_sensors
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
