@@ -45,6 +45,9 @@ rm -rf $RPM_BUILD_ROOT
         DESTDIR=$RPM_BUILD_ROOT \
         shelldesktopdir=%{_desktopdir}
 
+# Theme name has changed from locolor to Locolor
+mv -f $RPM_BUILD_ROOT%{_iconsdir}/locolor $RPM_BUILD_ROOT%{_iconsdir}/Locolor
+
 %find_lang %{name} --with-kde
 
 %clean
