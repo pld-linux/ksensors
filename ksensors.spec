@@ -2,11 +2,13 @@ Summary:	KSensors - lmsensors frontend
 Summary(pl.UTF-8):	KSensors - frontend dla lmsensors
 Name:		ksensors
 Version:	0.7.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/ksensors/%{name}-%{version}.tar.gz
-# Source0-md5:	4f6c5d7dea5e637e772d17f1e547d6f1
+# Upstream is dead
+#Source0:	http://dl.sourceforge.net/ksensors/%{name}-%{version}.tar.gz
+Source0:	http://people.atrpms.net/~hdegoede/%{name}-%{version}-fedora-14.tar.gz
+# Source0-md5:	7c64a2ef836c13d72b5711791819072e
 URL:		http://ksensors.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel
@@ -60,8 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/apps/ksensors
 %{_datadir}/apps/ksensors/ksensorsui.rc
 %dir %{_datadir}/apps/ksensors/pics
-%{_datadir}/apps/ksensors/pics/*
-%dir %{_datadir}/apps/sounds
-%{_datadir}/apps/sounds/*
+%{_datadir}/apps/ksensors/pics/*.png
+%{_datadir}/sounds/ksensors_alert.wav
 %{_desktopdir}/*.desktop
 %{_iconsdir}/*/*/apps/*
